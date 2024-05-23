@@ -8,6 +8,8 @@ import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import HomePage from './HomePage';
 import Metrics from './Metrics';
 import './App.css';
+import HomeIcon from '@mui/icons-material/Home';
+import EditIcon from '@mui/icons-material/Edit';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
 
@@ -18,7 +20,7 @@ const systemMessage = {
 
 // Load API key from environment variable
 // API KEY SHOULD GO HERE 
-const apiKey = "";
+//const apiKey = "";
 
 function App() {
   const [typing, setTyping] = useState(false);
@@ -120,7 +122,7 @@ function App() {
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${apiKey}`,
+        //"Authorization": `Bearer ${apiKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(apiRequestBody)
@@ -233,16 +235,18 @@ function App() {
                 Chat Application with Metrics
               </Typography>
               <Button title='close up your current chat and save it' variant="contained" onClick={closeChat} style={{ marginBottom: '16px' }}>
-                End Chat and Save
+                Save and end Chat
               </Button>
-              <Button title='Open up a new chat' variant="contained" onClick={startNewChat} style={{ marginBottom: '16px', marginLeft: '16px'}}>
-                Start New Chat
+              <Button title="Open up a new chat" variant="contained" onClick={startNewChat}style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}>
+                <EditIcon/>
               </Button>
               <Button variant="contained" component={Link} to="/metrics" style={{ marginBottom: '16px', marginLeft: '16px'}}>
-                View Metrics
+                Metrics
               </Button>
-              <Button variant="contained" title='Back to home page'component={Link} to="/" style={{ marginBottom: '16px', marginLeft: '16px'}}>
-                Home
+              <Button variant="contained" title="Back to home page" component={Link} to="/"
+              style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}
+              >
+                <HomeIcon/>
               </Button>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={3}>

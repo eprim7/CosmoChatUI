@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Paper, Typography, Button } from '@mui/material';
 import { Line, Bar } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
+import HomeIcon from '@mui/icons-material/Home';
+
 
 const Metrics = ({ averageLengths, dailyMessages, numChats, averageLengthData, dailyMessagesData, options, barOptions }) => {
   return (
@@ -10,11 +12,13 @@ const Metrics = ({ averageLengths, dailyMessages, numChats, averageLengthData, d
         Chat Metrics
       </Typography>
       <Button variant="contained" component={Link} to="/app" style={{ marginBottom: '16px' }}>
-        Back to Chat
+        Chat
       </Button>
-      <Button variant="contained" title='Back to home page'component={Link} to="/" style={{ marginBottom: '16px', marginLeft: '16px'}}>
-         Home
-      </Button>
+      <Button variant="contained" title="Back to home page" component={Link} to="/"
+              style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}
+              >
+                <HomeIcon/>
+              </Button>
       <Paper style={{ padding: '16px', border: '2px solid black', marginBottom: '16px' }}>
         <Typography variant="h6" gutterBottom>
           Average Message Length
