@@ -246,7 +246,7 @@ function App() {
               <Button variant="contained" title="Back to home page" component={Link} to="/"
               style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}
               >
-                <HomeIcon/>
+                <HomeIcon/> 
               </Button>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={3}>
