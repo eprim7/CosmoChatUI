@@ -10,6 +10,8 @@ import Metrics from './Metrics';
 import './App.css';
 import HomeIcon from '@mui/icons-material/Home';
 import EditIcon from '@mui/icons-material/Edit';
+import Header from './Header';
+import Footer from './Footer';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
 
@@ -221,37 +223,38 @@ function App() {
   };
 
   return (
-    <Router>
+    <><Router>
       <Routes>
         <Route
           path="/"
-          element={<HomePage chatHistory={chatHistory} />}
-        />
+          element={<HomePage chatHistory={chatHistory} />} />
         <Route
           path="/app"
-          element={
+          element={<><Header>
+
+          </Header>
             <Container>
-              <Typography variant="h4" gutterBottom style={{ marginTop: '30px'}}>
-                Chat Application with Metrics
+              <Typography variant="h4" gutterBottom style={{ marginTop: '30px' }}>
+                Welcome To ChatGPT
               </Typography>
               <Button title='close up your current chat and save it' variant="contained" onClick={closeChat} style={{ marginBottom: '16px' }}>
                 Save and end Chat
               </Button>
-              <Button title="Open up a new chat" variant="contained" onClick={startNewChat}style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}>
-                <EditIcon/>
+              <Button title="Open up a new chat" variant="contained" onClick={startNewChat} style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}>
+                <EditIcon />
               </Button>
-              <Button variant="contained" component={Link} to="/metrics" style={{ marginBottom: '16px', marginLeft: '16px'}}>
+              <Button variant="contained" component={Link} to="/metrics" style={{ marginBottom: '16px', marginLeft: '16px' }}>
                 Metrics
               </Button>
               <Button variant="contained" title="Back to home page" component={Link} to="/"
-              style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}
+                style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}
               >
-                <HomeIcon/> 
+                <HomeIcon />
               </Button>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={3}>
                   <Paper style={{ padding: '16px', border: '2px solid black', height: '600px', overflowY: 'auto' }}>
-                    <Typography variant="h6" gutterBottom style={{fontWeight: 'bold', fontSize: 'large', textDecoration: 'underline'}}>
+                    <Typography variant="h6" gutterBottom style={{ fontWeight: 'bold', fontSize: 'large', textDecoration: 'underline' }}>
                       Chat History
                     </Typography>
                     <List>
@@ -277,8 +280,7 @@ function App() {
                             <MessageInput
                               placeholder="Type message here"
                               onSend={handleSend}
-                              style={{ position: 'absolute', bottom: '0', width: '100%', borderTop: '1px solid #ccc' }}
-                            />
+                              style={{ position: 'absolute', bottom: '0', width: '100%', borderTop: '1px solid #ccc' }} />
                           </ChatContainer>
                         </MainContainer>
                       </div>
@@ -286,25 +288,21 @@ function App() {
                   )}
                 </Grid>
               </Grid>
-            </Container>
-          }
-        />
+            </Container></>} />
         <Route
           path="/metrics"
-          element={
-            <Metrics
-              averageLengths={averageLengths}
-              dailyMessages={dailyMessages}
-              numChats={numChats}
-              averageLengthData={averageLengthData}
-              dailyMessagesData={dailyMessagesData}
-              options={options}
-              barOptions={barOptions}
-            />
-          }
-        />
+          element={<Metrics
+            averageLengths={averageLengths}
+            dailyMessages={dailyMessages}
+            numChats={numChats}
+            averageLengthData={averageLengthData}
+            dailyMessagesData={dailyMessagesData}
+            options={options}
+            barOptions={barOptions} />} />
       </Routes>
     </Router>
+    <Footer />
+    </>
   );
 }
 

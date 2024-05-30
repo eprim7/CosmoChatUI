@@ -36,7 +36,8 @@ nav a {
 
 .card {
   padding: 1rem;
-  background: white;
+  background-color: #282c34;
+  color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -56,7 +57,29 @@ footer {
   margin-top: 1rem;
 }
 
+body {
+  font-family: 'Arial, sans-serif';
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+button {
+  font-family: 'Arial, sans-serif';
+}
+
+input {
+  font-family: 'Arial, sans-serif';
+}
+
+.paper {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+}
 
 
 
