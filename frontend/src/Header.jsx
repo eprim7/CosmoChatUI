@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import imageSrc from "./Logo.png"
+import { Link } from 'react-router-dom';
 
 export default function ButtonAppBar() {
   return (
@@ -24,10 +25,15 @@ export default function ButtonAppBar() {
             <img src={imageSrc} alt="Logo" style={{ height: '60px', width: '80px' }} />
 
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Button variant='text' component={Link} to="/" color='inherit'>
             Chat GPT Clone
-          </Typography>
-          <Button color="inherit">Login</Button>
+          </Button>
+          <Button variant='text' component={Link} to="/Metrics" color="inherit" style={{marginLeft:'100px'}}>
+            Metrics
+          </Button>
+          <Button variant='text' color='inherit' style={{marginLeft: '100px'}}>
+            Features
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>

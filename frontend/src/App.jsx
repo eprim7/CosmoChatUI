@@ -237,16 +237,16 @@ function App() {
               <Typography variant="h4" gutterBottom style={{ marginTop: '30px' }}>
                 Welcome To ChatGPT
               </Typography>
-              <Button title='close up your current chat and save it' variant="contained" onClick={closeChat} style={{ marginBottom: '16px' }}>
+              <Button title='close up your current chat and save it' variant="outlined" onClick={closeChat} style={{ marginBottom: '16px' }}>
                 Save and end Chat
               </Button>
-              <Button title="Open up a new chat" variant="contained" onClick={startNewChat} style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}>
+              <Button title="Open up a new chat" variant="outlined" onClick={startNewChat} style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}>
                 <EditIcon />
               </Button>
-              <Button variant="contained" component={Link} to="/metrics" style={{ marginBottom: '16px', marginLeft: '16px' }}>
+              <Button variant="outlined" component={Link} to="/metrics" style={{ marginBottom: '16px', marginLeft: '16px' }}>
                 Metrics
               </Button>
-              <Button variant="contained" title="Back to home page" component={Link} to="/"
+              <Button variant="outlined" title="Back to home page" component={Link} to="/"
                 style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}
               >
                 <HomeIcon />

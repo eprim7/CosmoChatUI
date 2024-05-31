@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Paper, Typography, Button } from '@mui/material';
+import { Container, Paper, Typography, Button, Grid } from '@mui/material';
 import { Line, Bar } from 'react-chartjs-2';
 import { Link } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
@@ -9,36 +9,44 @@ import Footer from './Footer';
 
 const Metrics = ({ averageLengths, dailyMessages, numChats, averageLengthData, dailyMessagesData, options, barOptions }) => {
   return (
-    <><Header>
-
-    </Header><Container>
+    <>
+      <Header />
+      <Container>
         <Typography variant="h4" gutterBottom style={{ marginTop: '30px' }}>
           Chat Metrics
         </Typography>
-        <Button variant="contained" component={Link} to="/app" style={{ marginBottom: '16px' }}>
+        <Button variant="outlined" component={Link} to="/app" style={{ marginBottom: '16px' }}>
           Chat
         </Button>
-        <Button variant="contained" title="Back to home page" component={Link} to="/"
+        <Button
+          variant="outlined"
+          title="Back to home page"
+          component={Link}
+          to="/"
           style={{ marginBottom: '16px', marginLeft: '16px', alignItems: 'center' }}
         >
           <HomeIcon />
         </Button>
-        <Paper style={{ padding: '16px', border: '2px solid black', marginBottom: '16px' }}>
-          <Typography variant="h6" gutterBottom>
-            Average Message Length
-          </Typography>
-          <Line data={averageLengthData} options={options} />
-          <Typography variant="h6" gutterBottom style={{ marginTop: '16px' }}>
-            Number of Chats: {numChats}
-          </Typography>
-        </Paper>
-        <Paper style={{ padding: '16px', border: '2px solid black' }}>
-          <Typography variant="h6" gutterBottom>
-            Messages per Day
-          </Typography>
-          <Bar data={dailyMessagesData} options={barOptions} />
-        </Paper>
-      </Container></>
+        <Grid container spacing={3}>
+          <Grid item xs={6}>
+            <Paper style={{ padding: '16px', border: '2px solid black', marginBottom: '120px', height: '80%' }}>
+              <Typography variant="h6" gutterBottom style={{fontWeight: 'bold'}}>
+                Average Message Length
+              </Typography>
+              <Line data={averageLengthData} options={options} />
+            </Paper>
+          </Grid>
+          <Grid item xs={6}>
+            <Paper style={{ padding: '16px', border: '2px solid black', height: '80%' }}>
+              <Typography variant="h6" gutterBottom style={{fontWeight: 'bold'}}>
+                Messages per Day
+              </Typography>
+              <Bar data={dailyMessagesData} options={barOptions} />
+            </Paper>
+          </Grid>
+        </Grid>
+      </Container>
+    </>
   );
 };
 

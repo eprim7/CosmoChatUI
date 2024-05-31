@@ -8,9 +8,9 @@ const HomePage = ({ chatHistory }) => {
   return (
     <>
       <Header />
-      <div className="App">
+      <div className="hero-background">
         <section className="hero">
-          <h2 style={{ textWrap: 'balance' }}>
+          <h2 style={{ textWrap: 'balance', color:'black'}}>
             Welcome to the ChatGPT Clone, your own personal AI assistant. Ask as many questions as you want and I will answer it, 
             while also keeping up with the metrics. However, I do occasionally make errors so be sure to always be on the lookout. 
             Happy Chatting!!
@@ -19,9 +19,10 @@ const HomePage = ({ chatHistory }) => {
             Start Chatting now
           </Button>
         </section>
-
+      </div>
+      <div className="App">
         <section className="features" id="features">
-          <h2>Features</h2>
+          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>Features</h1>
           <div className="feature-cards">
             <div className="card">
               <h3>Real-time Responses</h3>
@@ -33,7 +34,7 @@ const HomePage = ({ chatHistory }) => {
             </div>
             <div className="card">
               <h3>Metrics</h3>
-              <p>See how often you use Chat, and how long your chats are</p>
+              <p>See metrics on your performance</p>
             </div>
             <div className="card">
               <h3>Save Old Chats</h3>
@@ -43,29 +44,38 @@ const HomePage = ({ chatHistory }) => {
         </section>
 
         <section className="how-it-works" id="how-it-works">
-          <h2>How It Works</h2>
-          <ul>
-            <li>Sign Up or Log In</li>
-            <li>Type your question or topic</li>
-            <li>Receive instant responses</li>
-            <li>Continue the conversation seamlessly</li>
-          </ul>
+          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>How it Works</h1>
+          <div className="feature-cards">
+            <div className="card">
+              <h2>Locate to Chat now</h2>
+            </div>
+            <div className="card">
+              <h2>Type your question or topic</h2>
+            </div>
+            <div className="card">
+              <h2>Receive Instant responses</h2>
+            </div>
+            <div className="card">
+              <h2>Continue the conversation seamlessly</h2>
+            </div>
+          </div>
         </section>
 
         <section className="testimonials" id="testimonials">
-          <h2>Testimonials</h2>
-          <div className="testimonial">
-            <p>"This is the best AI chatbot I've ever used!" - User A</p>
-          </div>
-          <div className="testimonial">
-            <p>"Incredibly helpful and easy to use." - User B</p>
+          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>Testimonials</h1>
+          <div className="feature-cards">
+            <div className="card">
+              <h3>Will Primasing</h3>
+              <p>"It is just like the real thing"</p>
+            </div>
+            <div className="card">
+              <h3>Kyle Primasing</h3>
+              <p>"Extremely helpful and easy to use"</p>
+            </div>
           </div>
         </section>
-
-        
       </div>
-      </>
-    
+    </>
   );
 }
 
