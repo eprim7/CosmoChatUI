@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 
 export default function Footer(){
     return (
-        <Box sx={{ backgroundColor: '#282c34', height: '100px', bottom: '0', left: '0', width: '100%'}}>
+        <Box sx={{ backgroundColor: '#fda085', height: '100px', bottom: '0', left: '0', width: '100%'}}>
             <Typography color="white" textAlign="center" margin='20px' variant='h5'>
                 Created Using Node.js and React.js
             </Typography>

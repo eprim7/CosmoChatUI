@@ -12,6 +12,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import EditIcon from '@mui/icons-material/Edit';
 import Header from './Header';
 import Footer from './Footer';
+import { FaHistory } from "react-icons/fa";
+
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
 
@@ -255,7 +257,7 @@ function App() {
                 <Grid item xs={12} md={3}>
                   <Paper style={{ padding: '16px', border: '2px solid black', height: '600px', overflowY: 'auto' }}>
                     <Typography variant="h6" gutterBottom style={{ fontWeight: 'bold', fontSize: 'large', textDecoration: 'underline' }}>
-                      Chat History
+                      Chat History <FaHistory />
                     </Typography>
                     <List>
                       {chatHistory.map((chat, index) => (

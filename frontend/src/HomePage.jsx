@@ -3,6 +3,17 @@ import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
+import { FaEdit, FaLocationArrow } from "react-icons/fa";
+import { FaKeyboard } from "react-icons/fa";
+import { FaComments } from "react-icons/fa";
+import { FaHandshake } from "react-icons/fa";
+import { FaLaptop } from "react-icons/fa";
+import { FaChartLine } from "react-icons/fa";
+import { FaRegEdit } from "react-icons/fa";
+import { FaCheck } from "react-icons/fa";
+
+
+
 
 const HomePage = ({ chatHistory }) => {
   return (
@@ -22,47 +33,51 @@ const HomePage = ({ chatHistory }) => {
       </div>
       <div className="App">
         <section className="features" id="features">
-          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>Features</h1>
+          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>Features <FaCheck /> </h1>
           <div className="feature-cards">
             <div className="card">
-              <h3>Real-time Responses</h3>
-              <p>Get instant answers to your questions.</p>
+            <FaComments className="icon" />
+              <h2>Get instant answers to your questions.</h2>
             </div>
             <div className="card">
-              <h3>Customizable Interface</h3>
-              <p>Tailor the chat experience to your needs.</p>
+              <FaLaptop className='icon'/>
+              <h2>Tailor the chat experience to your needs.</h2>
             </div>
             <div className="card">
-              <h3>Metrics</h3>
-              <p>See metrics on your performance</p>
+              <FaChartLine className='icon'/>
+              <h2>See metrics on your performance</h2>
             </div>
             <div className="card">
-              <h3>Save Old Chats</h3>
-              <p>Freely navigate to previous chats as needed</p>
+              <FaRegEdit  className='icon'/>
+              <h2>Pick up right where you left off in previous chats</h2>
             </div>
           </div>
         </section>
 
-        <section className="how-it-works" id="how-it-works">
-          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>How it Works</h1>
-          <div className="feature-cards">
-            <div className="card">
-              <h2>Locate to Chat now</h2>
-            </div>
-            <div className="card">
-              <h2>Type your question or topic</h2>
-            </div>
-            <div className="card">
-              <h2>Receive Instant responses</h2>
-            </div>
-            <div className="card">
-              <h2>Continue the conversation seamlessly</h2>
-            </div>
-          </div>
-        </section>
+  <section className="how-it-works" id="how-it-works">
+    <h1>How it Works <FaLaptop /></h1>
+    <div className="feature-cards">
+      <div className="card">
+        <FaLocationArrow className="icon" />
+        <h2>Locate to Chat now</h2>
+      </div>
+      <div className="card">
+        <FaKeyboard className="icon" />
+        <h2>Type your question or topic</h2>
+      </div>
+      <div className="card">
+        <FaComments className="icon" />
+        <h2>Receive Instant responses</h2>
+      </div>
+      <div className="card">
+        <FaHandshake className="icon" />
+        <h2>Continue the conversation seamlessly</h2>
+      </div>
+    </div>
+  </section>
 
         <section className="testimonials" id="testimonials">
-          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>Testimonials</h1>
+          <h1 style={{ fontSize: '50px', fontWeight: 'bold', textDecoration: 'underline'}}>Testimonials <FaComments /></h1>
           <div className="feature-cards">
             <div className="card">
               <h3>Will Primasing</h3>
@@ -77,6 +92,6 @@ const HomePage = ({ chatHistory }) => {
       </div>
     </>
   );
-}
+};
 
 export default HomePage;

@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 export default function ButtonAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{backgroundColor: '#282c34'}}>
+      <AppBar position="static" style={{backgroundColor: '#fda085'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -30,9 +30,6 @@ export default function ButtonAppBar() {
           </Button>
           <Button variant='text' component={Link} to="/Metrics" color="inherit" style={{marginLeft:'100px'}}>
             Metrics
-          </Button>
-          <Button variant='text' color='inherit' style={{marginLeft: '100px'}}>
-            Features
           </Button>
         </Toolbar>
       </AppBar>
